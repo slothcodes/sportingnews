@@ -1,0 +1,36 @@
+body {
+    background: grey;
+    color: black;
+}
+
+#container {
+    display: flex;
+}
+
+#topics {
+    display: flex;
+    flex-direction: column;
+}
+
+#storyList {
+    display: flex;
+    flex-direction: column;
+}
+
+.storyElement {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    border-style: solid;
+    justify-content: space-between;
+}
+
+.storyElementTextBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100px;
+    max-height: 100px;
+}
