@@ -6,22 +6,23 @@
 // [X] SORT THE ARRAY OF OBJECTS ACCORDING TO DATE
 // [X] ADD HYPERLINK TO TITLE
 // [X] ADD IMAGE TO BLOCK WHEN AVAILABLE
-// [X ] ADD BUTTON CONTROLS TO SELECT TOPICS
+// [ ] ADD BUTTON CONTROLS TO SELECT TOPICS
+//      - [X] ADD EVENT LISTENER TO DETERMINE WHEN BUTTON IS CLICKED
+//      - [X] CLEAR CURRENTLY DISPLAYED ARTICLES
+//      - [ ] LOAD ARTICLES FROM SELECTED LIST
 // [ ] FORMAT BUTTONS AND FIX THEIR POSITION WHEN SCROLLING
+// [ ] REFACTOR ALL CODE TO BE MORE EFFICIENT AND READABLE
 // testing testing testing
 
 const nflFeeds = ['https://www.rotowire.com/rss/news.php?sport=NFL','https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nfl','https://www.espn.com/espn/rss/nfl/news','https://www.cbssports.com/rss/headlines/nfl']
-const nbaFeeds = ['https://www.rotowire.com/rss/news.php?sport=NBA','http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nba','https://www.espn.com/espn/rss/nba/news','https://www.cbssports.com/rss/headlines/nba']
-const mlbFeeds = ['https://www.rotowire.com/rss/news.php?sport=MLB','http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=mlb','https://www.espn.com/espn/rss/mlb/news','https://www.cbssports.com/rss/headlines/mlb']
-const mmaFeeds = ['http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=ufc','https://www.cbssports.com/rss/headlines/mma']
-const golfFeeds = ['https://www.rotowire.com/rss/news.php?sport=GOLF','http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=golf','https://www.cbssports.com/rss/headlines/golf']
+const nbaFeeds = ['https://www.rotowire.com/rss/news.php?sport=NBA','https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nba','https://www.espn.com/espn/rss/nba/news','https://www.cbssports.com/rss/headlines/nba']
+const mlbFeeds = ['https://www.rotowire.com/rss/news.php?sport=MLB','https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=mlb','https://www.espn.com/espn/rss/mlb/news','https://www.cbssports.com/rss/headlines/mlb']
+const mmaFeeds = ['https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=ufc','https://www.cbssports.com/rss/headlines/mma']
+const golfFeeds = ['https://www.rotowire.com/rss/news.php?sport=GOLF','https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=golf','https://www.cbssports.com/rss/headlines/golf']
 const boxingFeeds = ['https://www.cbssports.com/rss/headlines/boxing']
-const ncaafFeeds = ['https://www.rotowire.com/rss/news.php?sport=CFB','http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=cfb','https://www.espn.com/espn/rss/ncf/news','https://www.cbssports.com/rss/headlines/college-football']
+const ncaafFeeds = ['https://www.rotowire.com/rss/news.php?sport=CFB','https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=cfb','https://www.espn.com/espn/rss/ncf/news','https://www.cbssports.com/rss/headlines/college-football']
 
-//const nflFeeds = ['https://www.espn.com/espn/rss/nfl/news','https://www.cbssports.com/rss/headlines/nfl'];
-//const nbaFeeds = ['https://www.espn.com/espn/rss/nba/news','https://www.cbssports.com/rss/headlines/nba'];
 const allFeeds = [nflFeeds,nbaFeeds,mlbFeeds,mmaFeeds,golfFeeds,boxingFeeds,ncaafFeeds];
-//let stories = [];
 bootList = boot();
 //console.log(bootList);
 
@@ -30,6 +31,118 @@ async function boot(){
     const sortedStoryList = sortStoriesDate(unsortedStoryList) 
     addStories(sortedStoryList);
     //return s;
+}
+
+async function onclicktest(selectedTopic){
+    switch (selectedTopic){
+        case "All":
+            clearStories();
+            boot();
+            //alert('All');
+            break;
+        case "NFL":
+            clearStories();
+            //console.log('getting stories');
+            var unsortedTopicList = await getTopicStories(nflFeeds);
+            //console.log('sorting stories');
+            var sortedTopicList = sortStoriesDate(unsortedTopicList);
+            addStories(sortedTopicList);
+            //alert('NFL');
+            break;
+        case "NCAAF":
+            clearStories();
+            var unsortedTopicList = await getTopicStories(ncaafFeeds);
+            var sortedTopicList = sortStoriesDate(unsortedTopicList);
+            addStories(sortedTopicList);
+            break;
+        case "MLB":
+            clearStories();
+            var unsortedTopicList = await getTopicStories(mlbFeeds);
+            var sortedTopicList = sortStoriesDate(unsortedTopicList);
+            addStories(sortedTopicList);
+            break;
+        case "NBA":
+            clearStories();
+            var unsortedTopicList = await getTopicStories(nbaFeeds);
+            var sortedTopicList = sortStoriesDate(unsortedTopicList);
+            addStories(sortedTopicList);
+            break;
+        case "MMA":
+            clearStories();
+            var unsortedTopicList = await getTopicStories(mmaFeeds);
+            var sortedTopicList = sortStoriesDate(unsortedTopicList);
+            addStories(sortedTopicList);
+            break;
+        case "Boxing":
+            clearStories();
+            var unsortedTopicList = await getTopicStories(boxingFeeds);
+            var sortedTopicList = sortStoriesDate(unsortedTopicList);
+            addStories(sortedTopicList);
+            break;
+        case "Golf":
+            clearStories();
+            var unsortedTopicList = await getTopicStories(golfFeeds);
+            var sortedTopicList = sortStoriesDate(unsortedTopicList);
+            addStories(sortedTopicList);
+            break;
+    }
+    
+}
+
+function clearStories(){
+    const elementList = document.getElementById('storyList');
+    let fChild = elementList.firstChild
+    while (fChild){
+        elementList.removeChild(fChild);
+        fChild = elementList.firstChild;
+    }
+    for(i=0;i<elementList.length;i++){
+        elementList[i].remove();
+    }  
+}
+
+function getSelectedStories(topic){
+    switch (topic){
+        case "NFL":
+            getTopicStories(nflFeeds)
+            break;
+        case "NCAAF":
+            alert('NCAAF');
+            break;
+        case "MLB":
+            alert('MLB');
+            break;
+        case "NBA":
+            alert('NBA');
+            break;
+        case "MMA":
+            alert('MMA');
+            break;
+        case "Boxing":
+            alert('Boxing');
+            break;
+        case "Golf":
+            alert('Golf');
+            break;
+    }
+}
+
+async function getTopicStories(feedArray){
+    let topicStories = [];
+    for(x=0;x<feedArray.length;x++){
+        console.log('source ' + feedArray[x]);
+        const sults = await fetch(feedArray[x]);
+        const tex = await sults.text();
+        let parser = new DOMParser();
+        let xml = parser.parseFromString(tex,'text/xml');
+        let itemList = xml.getElementsByTagName('item');
+        for(y=0;y<itemList.length;y++){
+                title = formatStories(itemList[y]);
+                topicStories.push(title);
+        }
+    }
+    console.log('topic stories: ' + topicStories);
+    return topicStories;
 }
 
 function addStories(storyList){
@@ -82,15 +195,6 @@ function addStories(storyList){
         domElement.appendChild(articleBlock);
     })
 
-
-    // storyList.forEach(element => {
-    //     const para = document.createElement('p');
-    //     const node = document.createTextNode(element);
-    //     para.appendChild(node);
-    //     const domElement = document.getElementById('container');
-    //     domElement.appendChild(para);
-    // });
-    //let sBlock = document.createElement('span');
 }
 
 async function initialLoad(){
