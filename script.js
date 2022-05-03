@@ -11,12 +11,12 @@
 // testing testing testing
 
 const nflFeeds = ['https://www.rotowire.com/rss/news.php?sport=NFL','https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nfl','https://www.espn.com/espn/rss/nfl/news','https://www.cbssports.com/rss/headlines/nfl']
-const nbaFeeds = ['https://www.rotowire.com/rss/news.php?sport=NBA','https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nba','https://www.espn.com/espn/rss/nba/news','https://www.cbssports.com/rss/headlines/nba']
-const mlbFeeds = ['https://www.rotowire.com/rss/news.php?sport=MLB','https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=mlb','https://www.espn.com/espn/rss/mlb/news','https://www.cbssports.com/rss/headlines/mlb']
-const mmaFeeds = ['https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=ufc','https://www.cbssports.com/rss/headlines/mma']
-const golfFeeds = ['https://www.rotowire.com/rss/news.php?sport=GOLF','https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=golf','https://www.cbssports.com/rss/headlines/golf']
+const nbaFeeds = ['https://www.rotowire.com/rss/news.php?sport=NBA','http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nba','https://www.espn.com/espn/rss/nba/news','https://www.cbssports.com/rss/headlines/nba']
+const mlbFeeds = ['https://www.rotowire.com/rss/news.php?sport=MLB','http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=mlb','https://www.espn.com/espn/rss/mlb/news','https://www.cbssports.com/rss/headlines/mlb']
+const mmaFeeds = ['http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=ufc','https://www.cbssports.com/rss/headlines/mma']
+const golfFeeds = ['https://www.rotowire.com/rss/news.php?sport=GOLF','http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=golf','https://www.cbssports.com/rss/headlines/golf']
 const boxingFeeds = ['https://www.cbssports.com/rss/headlines/boxing']
-const ncaafFeeds = ['https://www.rotowire.com/rss/news.php?sport=CFB','https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=cfb','https://www.espn.com/espn/rss/ncf/news','https://www.cbssports.com/rss/headlines/college-football']
+const ncaafFeeds = ['https://www.rotowire.com/rss/news.php?sport=CFB','http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=cfb','https://www.espn.com/espn/rss/ncf/news','https://www.cbssports.com/rss/headlines/college-football']
 
 //const nflFeeds = ['https://www.espn.com/espn/rss/nfl/news','https://www.cbssports.com/rss/headlines/nfl'];
 //const nbaFeeds = ['https://www.espn.com/espn/rss/nba/news','https://www.cbssports.com/rss/headlines/nba'];
