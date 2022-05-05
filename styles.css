@@ -3,8 +3,13 @@
     - [X] ENLARGE BUTTONS
     - [X] MAKE BUTTONS ROUNDED
     - [X] MAKE BUTTON POSITIONS STATIC
-    - [ ] CORRECT BUTTON RESPONSIVENESS SIZING ISSUES
+    - [X] CORRECT BUTTON RESPONSIVENESS SIZING ISSUES
+    - [ ] CHANGE COLOR OF BUTTON IF IT IS CLICKED
 [X] UPDATE COLOR OF BACKGROUND, TEXT AND BUTTONS
+[ ] FORMAT THE STORY BLOCKS
+    - [ ] SET HEADER
+    - [ ] FIX PICTURES
+    - [ ] ADJUST SPACING
 
 */
 
@@ -69,11 +74,13 @@ input[type="button"] {
 .storyElement {
     background:  #7B8C99;
     display: flex;
-    flex-direction: row;
-    max-width: 50vw;
+    flex-direction: column;
+    max-width: 80vw;
     margin-bottom: 1vh;
     border-style: solid;
     justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2vh;
 }
 
 .storyElementTextBlock {
@@ -82,7 +89,7 @@ input[type="button"] {
 }
 
 img {
-    width: 30vw;
-    height: 30vh;
+    width: 15rem;
+    height: 15rem;
     
 }
