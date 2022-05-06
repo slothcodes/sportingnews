@@ -1,0 +1,129 @@
+/* 
+[ ] FORMAT BUTTONS AND FIX THEIR POSITION WHEN SCROLLING
+    - [X] ENLARGE BUTTONS
+    - [X] MAKE BUTTONS ROUNDED
+    - [X] MAKE BUTTON POSITIONS STATIC
+    - [X] CORRECT BUTTON RESPONSIVENESS SIZING ISSUES
+    - [ ] CHANGE COLOR OF BUTTON IF IT IS CLICKED
+[X] UPDATE COLOR OF BACKGROUND, TEXT AND BUTTONS
+[ ] FORMAT THE STORY BLOCKS
+    - [ ] SET HEADER
+    - [ ] FIX PICTURES
+    - [ ] ADJUST SPACING
+
+*/
+
+body {
+    
+    background:#1A374D;
+    color: white;
+
+}
+
+#topicButtons {
+    position: sticky;
+}
+
+/* input[type="button"] {
+    height: 7vh;
+    width: 7vw;
+    background: aqua;
+    
+} */
+
+#sidebar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 20vw;
+    margin-right: 2vw;
+    justify-content: space-between;
+    /* background: #00B4D8; */
+}
+
+#container {
+    display: flex;
+    /* justify-content: space-between; */
+    
+}
+
+#topicButtonsList {
+    display: flex;
+    flex-direction: column;
+    margin: .5vw;
+    list-style: none;
+    /* margin: 0; */
+    padding-right: 2rem; 
+    padding-left: 0;
+    padding-bottom: 0.5rem;
+    justify-content: space-between;
+}
+
+input[type="button"] {
+    height: 10vh;
+    width: 20vw;
+    background: #6998AB;
+    border: none;
+    border-radius: 2vh;
+}
+
+input[type="button"]:focus {
+    background: #B1D0E0;
+}
+
+#storyList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 75vw;
+    justify-content: space-between;
+    /* padding-right: 5vw; */
+    
+}
+
+.storyElement {
+    background:  #263037;
+    color: rgb(198, 198, 198);
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    /* max-height: 20vh; */
+    margin-bottom: 1vh;
+    border-style: solid;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2vh;
+}
+
+.storyElementTextBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin: 0.5rem;
+    
+}
+
+.title a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.description {
+    margin: 0.5rem;
+    /* padding-top: 1rem; */
+}
+
+.pubDate {
+    margin: 0.5rem;
+    /* padding-top: 1rem; */
+}
+
+
+img {
+    width: 15rem;
+    height: 15rem;
+    
+}
