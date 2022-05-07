@@ -1,0 +1,134 @@
+/* 
+[ ] FORMAT BUTTONS AND FIX THEIR POSITION WHEN SCROLLING
+    - [X] ENLARGE BUTTONS
+    - [X] MAKE BUTTONS ROUNDED
+    - [X] MAKE BUTTON POSITIONS STATIC
+    - [X] CORRECT BUTTON RESPONSIVENESS SIZING ISSUES
+    - [ ] CHANGE COLOR OF BUTTON IF IT IS CLICKED
+[X] UPDATE COLOR OF BACKGROUND, TEXT AND BUTTONS
+[ ] FORMAT THE STORY BLOCKS
+    - [X] SET HEADER
+    - [X] REMOVE PICTURES
+    - [X] ADJUST SPACING
+
+*/
+
+body {
+    
+    background: #30303B; /* #575761; /* #1A374D; */
+    color: #F1EFF0; /* white; */
+
+}
+
+#topicButtons {
+    position: sticky;
+}
+
+/* input[type="button"] {
+    height: 7vh;
+    width: 7vw;
+    background: aqua;
+    
+} */
+
+#sidebar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    height: 95vh;
+    width: 5rem;
+    margin-right: 2rem;
+    justify-content: space-between;
+    /* background: #00B4D8; */
+}
+
+#container {
+    display: flex;
+    /* justify-content: space-between; */
+    
+}
+
+#topicButtonsList {
+    display: flex;
+    flex-direction: column;
+    margin: .5vw;
+    list-style: none;
+    /* margin: 0; */
+    padding-right: 2rem; 
+    padding-left: 0;
+    padding-bottom: 0.5rem;
+    justify-content: space-between;
+}
+
+input[type="button"] {
+    height: 5em;
+    width: 7em;
+    background: #B2B2B2;  /* #6998AB; */
+    border: none;
+    border-radius: 1.5rem;
+}
+
+input[type="button"]:focus {
+    background: #C3BABA; /* #B1D0E0; */
+}
+
+#storyList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 75vw;
+    justify-content:space-evenly;
+    /* padding-right: 5vw; */
+    
+}
+
+.storyElement {
+    background: #111111;   /* #263037; */
+    color: #E6F0F3;
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    /* max-height: 20vh; */
+    margin-bottom: 1vh;
+    border-style: solid;
+    border-color: #B2B2B2;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2vh;
+}
+
+.storyElementTextBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin: 0.5rem;
+    
+}
+
+.title a {
+    text-decoration: none;
+    color: #F1EFF0;/* #E9E3E6; /*  whitesmoke; */
+}
+
+.description {
+    margin: 0.5rem;
+    /* padding-top: 1rem; */
+}
+
+.pubDate {
+    margin: 0.5rem;
+    /* padding-top: 1rem; */
+}
+
+
+img {
+    width: 15rem;
+    height: 15rem;
+    
+}
+
+input:focus{
+    outline: 0;
+}
